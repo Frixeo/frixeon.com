@@ -3,6 +3,6 @@
 
 <head>
 	<title>Good talk.</title>
-<head>
+</head>
 
 	
