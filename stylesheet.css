@@ -16,7 +16,7 @@ body {
 }
 @media only screen and (max-width: 1600px) and (min-width: 768px) {
   .masonry {
-    grid-template-columns: repeat(1, minmax(100px,1fr));
+    grid-template-columns: repeat(2, minmax(100px,1fr));
   }
 }
 @media only screen and (min-width: 400px) {
