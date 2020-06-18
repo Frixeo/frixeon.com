@@ -1,146 +1,59 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="stylesheet.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+
 </head>
-<body>
-<h1>
-	Frixeon's Website - <script> document.write(new Date().toLocaleDateString()); </script>
-</h1>
-<body>
-  <div class="masonry-item">
-    <div class="masonry-content">
-      <h3 class="masonry-title">What is this site?</h3>
-      <p class="masonry-description">Insert cool description of website</p>
-      <img width="500" height="500" src="Sandworm%20and%20Fleur%20De%20Lis.jpg"
-      <h3 class="masonry-title"></h3>
-      <p class="masonry-description"></p>
-    </div>
-  </div>
-  <div class="masonry-item">
-    <div class="masonry-content">
-	<h3 class="masonry-title">What I'm listening to...</h3>
-	    <p class="masonry-description"> Portuguese trap. Pretty amazing.</p>
-	<iframe width="500" height="500" src="https://www.youtube.com/embed/xZtBZXYL0i8" frameborder="0" 	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-   
 
-    </div>
+<body>
+
+<h1>Frixeon's Website - <script> document.write(new Date().toLocaleDateString()); </script> </h1>
+
+<p> Welcome to my website. I don't know what I'm doing with this or with html in general. Here's some stuff...</p>
+
+
+<div class="grid-container">
+
+  <div class="grid-item">
+  <br>
+  <img width="500" height="500" src="Sandworm%20and%20Fleur%20De%20Lis.jpg">
   </div>
- 
-  </div>
-  <div class="masonry-item">
-    <div class="masonry-content">
-      <img src="https://picsum.photos/450/400?image=700" alt="Dummy Image">
-      <h3 class="masonry-title">Molestiae quod consectetur enim modi unde expedita dicta placeat?</h3>
-      <p class="masonry-description">Aliquam laudantium mollitia quo sint maxime omnis repellendus beatae. Consequuntur molestias odio sapiente. Officia minima, nisi! Tempora vero, architecto ducimus animi nostrum nobis aliquid eligendi illo, facilis temporibus.</p>
-    </div>
   
+  <div class="grid-item1">
+  Currently listening to: <br>
+  <iframe width="500" height="500" src="https://www.youtube.com/embed/xZtBZXYL0i8" frameborder="0" 	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
+  
+  <div class="grid-item">
+  3
+  </div>  
+  
+  <div class="grid-item">
+  4
+  </div>
+   
+  <div class="grid-item">
+  4
+  </div>
+  
+   <div class="grid-item">
+  4
+  </div>
+  
+   <div class="grid-item">
+  4
+  </div>
+  
+   <div class="grid-item">
+  4
+  </div>
+  
+  
+  
 </div>
-<div class="masonry-footer">
-  <p>Created with &#10084; with <a href="//w3bits.com/tools/masonry-generator/" target="_blank" rel="external noopener nofollow">CSS Masonry Generator</a></p>
-</div>  </div>  <script src="//unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-  <script>
-/**
- * Set appropriate spanning to any masonry item
- *
- * Get different properties we already set for the masonry, calculate 
- * height or spanning for any cell of the masonry grid based on its 
- * content-wrapper's height, the (row) gap of the grid, and the size 
- * of the implicit row tracks.
- *
- * @param item Object A brick/tile/cell inside the masonry
- * @link https://w3bits.com/css-grid-masonry/
- */
-function resizeMasonryItem(item){
-  /* Get the grid object, its row-gap, and the size of its implicit rows */
-  var grid = document.getElementsByClassName('masonry')[0];
-  if( grid ) {
-    var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap')),
-        rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows')),
-        gridImagesAsContent = item.querySelector('img.masonry-content');
-
-    /*
-     * Spanning for any brick = S
-     * Grid's row-gap = G
-     * Size of grid's implicitly create row-track = R
-     * Height of item content = H
-     * Net height of the item = H1 = H + G
-     * Net height of the implicit row-track = T = G + R
-     * S = H1 / T
-     */
-    var rowSpan = Math.ceil((item.querySelector('.masonry-content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-
-    /* Set the spanning as calculated above (S) */
-    item.style.gridRowEnd = 'span '+rowSpan;
-    if(gridImagesAsContent) {
-      item.querySelector('img.masonry-content').style.height = item.getBoundingClientRect().height + "px";
-    }
-  }
-}
-
-/**
- * Apply spanning to all the masonry items
- *
- * Loop through all the items and apply the spanning to them using 
- * `resizeMasonryItem()` function.
- *
- * @uses resizeMasonryItem
- * @link https://w3bits.com/css-grid-masonry/
- */
-function resizeAllMasonryItems(){
-  // Get all item class objects in one list
-  var allItems = document.querySelectorAll('.masonry-item');
-
-  /*
-   * Loop through the above list and execute the spanning function to
-   * each list-item (i.e. each masonry item)
-   */
-  if( allItems ) {
-    for(var i=0;i>allItems.length;i++){
-      resizeMasonryItem(allItems[i]);
-    }
-  }
-}
-
-/**
- * Resize the items when all the images inside the masonry grid 
- * finish loading. This will ensure that all the content inside our
- * masonry items is visible.
- *
- * @uses ImagesLoaded
- * @uses resizeMasonryItem
- * @link https://w3bits.com/css-grid-masonry/
- */
-function waitForImages() {
-  //var grid = document.getElementById("masonry");
-  var allItems = document.querySelectorAll('.masonry-item');
-  if( allItems ) {
-    for(var i=0;i<allItems.length;i++){
-      imagesLoaded( allItems[i], function(instance) {
-        var item = instance.elements[0];
-        resizeMasonryItem(item);
-        console.log("Waiting for Images");
-      } );
-    }
-  }
-}
-
-/* Resize all the grid items on the load and resize events */
-var masonryEvents = ['load', 'resize'];
-masonryEvents.forEach( function(event) {
-  window.addEventListener(event, resizeAllMasonryItems);
-} );
-
-/* Do a resize once more when all the images finish loading */
-waitForImages();  
-</script>
-</body>
-</html>
-
 
 </body>
 </html>
