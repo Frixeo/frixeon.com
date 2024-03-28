@@ -1,57 +1,27 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="stylesheet.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Blog Title</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<h1>Test - <script> document.write(new Date().toLocaleDateString()); </script> </h1>
-
-<p> Welcome to my website. I don't know what I'm doing with this or with html in general. Here's some stuff...</p>
-
-
-<div class="grid-container">
-
-  <div class="grid-item-image">
-  
-  <img width="500" src="Sandworm%20and%20Fleur%20De%20Lis.jpg">
-  </div>
-  
-  <div class="grid-item1">
-  <br>
-  <iframe width="700" height="500" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>https://www.youtube.com/watch?v=HiOGAYOXN8U</iframe>
-  </div>
-  
-  <div class="grid-item">
- 
-  </div>  
-  
-  <div class="grid-item-text1">
-  Human life. <br>
-
-  </div>
-   
-  <div class="grid-item">
- 
-  </div>
-  
-   <div class="grid-item">
-  <a href="page1.html">page 1</a>
-  </div>
-  
-   <div class="grid-item">
-  <a href="page2.html">page 2</a>
-  </div>
- 
-  
-  
-  
-</div>
-
+  <header>
+    <h1><a href="#">Thoughts on Things</a></h1>
+  </header>
+  <main>
+    <section class="post">
+      <h2><a href="#">Blog Post Title 1</a></h2>
+      <p>This is a short excerpt of your blog post content.</p>
+    </section>
+    <section class="post">
+      <h2><a href="#">Blog Post Title 2</a></h2>
+      <p>This is another short excerpt of your blog post content.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; <?php echo date("Y"); ?> Your Name</p>
+  </footer>
 </body>
 </html>
