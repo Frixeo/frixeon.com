@@ -1,60 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
 }
 
-header {
-  padding: 20px;
+/* Header/Blog Title */
+.header {
+  padding: 30px;
   text-align: center;
+  background: white;
 }
 
-header h1 {
-  font-size: 2em;
-  margin: 0;
+.header h1 {
+  font-size: 50px;
 }
 
-main {
-  padding: 20px;
-}
-.text {
-	font-size: 1.5em;
-	margin-bottom: 10px;
-	color: #100
-}
-
-
-
-.post {
-  margin-bottom: 20px;
-}
-
-.post h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+/* Style the top navigation bar */
+.topnav {
   overflow: hidden;
   background-color: #333;
 }
 
-li {
+/* Style the topnav links */
+.topnav a {
   float: left;
-}
-
-li a {
   display: block;
-  color: white;
+  color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
-li a:hover {
+/* Change color on hover */
+.topnav a:hover {
   background-color: #111;
+  color: #ddd;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
 }
